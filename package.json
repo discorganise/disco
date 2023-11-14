@@ -1,0 +1,24 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "owner": "lerna --scope=owner run dev",
+    "waiter:android": "lerna --scope=waiter run android",
+    "waiter:ios": "lerna --scope=waiter run ios -- --simulator='iPhone 14 Pro Max'",
+    "client:android": "lerna --scope=client run android",
+    "client:ios": "lerna --scope=client run ios -- --simulator='iPhone 14 Pro Max'"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native", 
+      "**/react-native/**"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.4.2"
+  }
+}
